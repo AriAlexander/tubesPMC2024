@@ -48,7 +48,7 @@ void tampilkanBiayaTindakan(Biaya_Tindakan* biayaTindakan, int count);
 void clearInputBuffer();
 void tambahDataPasien();
 void ubahDataPasien();
-void hapusDataPasien(Data_Pasien* dataPasien, int* count);
+void hapusDataPasien(Data_Pasien* dataPasien, Riwayat_Medis_Pasien* riwayatMedisPasien, int* count);
 void cariDataPasien(Data_Pasien* dataPasien, int count);
 void tambahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int* count);
 void ubahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int count);
@@ -62,7 +62,7 @@ int main() {
     // Load data pasien dari file CSV
     int sizeDataPasien, sizeRiwayatMedis, sizeBiayaTindakan;
     Data_Pasien* dataPasien = readDataPasien("Data Pasien.csv", &sizeDataPasien);
-    Riwayat_Medis_Pasien* riwayatMedis = readRiwayatMedis("Riwayat Datang, Diagnosis, dan Tindakan.csv", &sizeRiwayatMedis);    
+    Riwayat_Medis_Pasien* riwayatMedisPasien = readRiwayatMedis("Riwayat Datang, Diagnosis, dan Tindakan.csv", &sizeRiwayatMedis);    
     Biaya_Tindakan* biayaTindakan = readBiayaTindakan("Biaya Tindakan.csv", &sizeBiayaTindakan);
 
     int pilihan;
@@ -77,7 +77,7 @@ int main() {
                 tampilkanDataPasien(dataPasien, sizeDataPasien);
                 break;
             case 2:
-                tampilkanRiwayatMedis(riwayatMedis, sizeRiwayatMedis);
+                tampilkanRiwayatMedis(riwayatMedisPasien, sizeRiwayatMedis);
                 break;
             case 3:
                 tampilkanBiayaTindakan(biayaTindakan, sizeBiayaTindakan);
@@ -88,16 +88,16 @@ int main() {
                 ubahDataPasien();
                 break;
             case 6:
-                hapusDataPasien(dataPasien, &sizeDataPasien);
+                hapusDataPasien(dataPasien, riwayatMedisPasien, &sizeDataPasien);
                 break;
             case 7:
                 cariDataPasien(dataPasien, sizeDataPasien);
                 break;
             case 8:
-                tambahRiwayatMedis(riwayatMedis, &sizeRiwayatMedis);
+                tambahRiwayatMedis(riwayatMedisPasien, &sizeRiwayatMedis);
                 break;
             case 9:
-                ubahRiwayatMedis(riwayatMedis, sizeRiwayatMedis);
+                ubahRiwayatMedis(riwayatMedisPasien, sizeRiwayatMedis);
                 break;
             case 10:
                 hapusRiwayatMedis();
@@ -154,7 +154,7 @@ void tampilkanMenuUtama() {
 void tampilkanDataPasien(Data_Pasien* dataPasien, int sizeDataPasien) {
     printf("=== Data Pasien ===\n");
     for (int i = 0; i < sizeDataPasien; i++) {
-        printf("No.: %d| Nama Lengkap: %s| Alamat: %s| Kota: %s| Tempat Lahir: %s| Tanggal Lahir: %s| Umur: %d| No. BPJS: %lld| ID Pasien: %s\n",
+        printf("No.: %d | Nama Lengkap: %s | Alamat: %s | Kota: %s | Tempat Lahir: %s | Tanggal Lahir: %s | Umur: %d | No. BPJS: %lld | ID Pasien: %s\n",
          dataPasien[i].No, dataPasien[i].Nama_Lengkap, dataPasien[i].Alamat, dataPasien[i].Kota, dataPasien[i].Tempat_Lahir, dataPasien[i].Tanggal_Lahir,
           dataPasien[i].Umur, dataPasien[i].No_BPJS, dataPasien[i].ID_Pasien);
     }
@@ -164,7 +164,9 @@ void tampilkanDataPasien(Data_Pasien* dataPasien, int sizeDataPasien) {
 void tampilkanRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMedis) {
     printf("=== Riwayat Medis Pasien ===\n");
     for (int i = 0; i < sizeRiwayatMedis; i++) {
-        printf("No.: %d| Tanggal: %s| ID Pasien: %s| Diagnosis: %s| Tindakan: %s| Kontrol: %s| Biaya (Rp): %.2lf\n", riwayatMedisPasien[i].No, riwayatMedisPasien[i].Tanggal, riwayatMedisPasien[i].ID_Pasien, riwayatMedisPasien[i].Diagnosis, riwayatMedisPasien[i].Tindakan, riwayatMedisPasien[i].Kontrol, riwayatMedisPasien[i].Biaya);
+        printf("No.: %d | Tanggal: %s | ID Pasien: %s | Diagnosis: %s | Tindakan: %s | Kontrol: %s | Biaya (Rp): %.2lf\n", 
+        riwayatMedisPasien[i].No, riwayatMedisPasien[i].Tanggal, riwayatMedisPasien[i].ID_Pasien, riwayatMedisPasien[i].Diagnosis, riwayatMedisPasien[i].Tindakan, 
+        riwayatMedisPasien[i].Kontrol, riwayatMedisPasien[i].Biaya);
     }
 }
 
@@ -172,7 +174,7 @@ void tampilkanRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiw
 void tampilkanBiayaTindakan(Biaya_Tindakan* biayaTindakanPasien, int sizeBiayaTindakan) {
     printf("=== Rincian Biaya Tindakan ===\n");
     for (int i = 0; i < sizeBiayaTindakan; i++) {
-        printf("No.: %d| Aktivitas: %s| Biaya (Rp): %.2lf\n", biayaTindakanPasien[i]. No, biayaTindakanPasien[i].Aktivitas, biayaTindakanPasien[i].Biaya);
+        printf("No.: %d | Aktivitas: %s | Biaya (Rp): %.2lf\n", biayaTindakanPasien[i]. No, biayaTindakanPasien[i].Aktivitas, biayaTindakanPasien[i].Biaya);
     }
 }
 
@@ -292,7 +294,7 @@ Biaya_Tindakan* readBiayaTindakan(const char* filename, int* count) {
 void tambahDataPasien() {}
 void ubahDataPasien() {}
 
-void hapusDataPasien(Data_Pasien* dataPasien, int* count) {
+void hapusDataPasien(Data_Pasien* dataPasien, Riwayat_Medis_Pasien* riwayatMedisPasien, int* count) {
     int no_pasien;
     printf("Masukkan nomor pasien yang ingin dihapus datanya! ");
     scanf("%d", &no_pasien);
@@ -300,11 +302,16 @@ void hapusDataPasien(Data_Pasien* dataPasien, int* count) {
     int i;
     for (i = 0; i < *count; i++) {
         if (dataPasien[i].No == no_pasien) {
+            char nama_pasien[50] = "";
+            strcpy(nama_pasien, dataPasien[i].Nama_Lengkap);
+
             // Shift elements to the left
             for (int j = i; j < *count - 1; j++) {
                 dataPasien[j] = dataPasien[j + 1];
+                riwayatMedisPasien[j] = riwayatMedisPasien[j + 1];
             }
             (*count)--;
+            printf("Data pasien nomor %d dengan nama %s telah dihapus.", no_pasien, nama_pasien);
             return;
         }
     }
