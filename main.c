@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <gtk/gtk.h>
 
 // Maksimal jumlah pasien yang bisa di-load
 #define MAX_PASIEN 100
