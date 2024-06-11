@@ -187,7 +187,7 @@ void tampilkanRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiw
 }
 
 // Fungsi untuk menampilkan rincian biaya tindakan
-void tampilkanBiayaTindakan(Biaya_Tindakan* biayaTindakanPasien, int sizeBiayaTindakan) {
+void tampilkanBiayaTindakan(Biaya_Tindakan* biayaTindakanPasien, int sreakan) {
     printf("=== Rincian Biaya Tindakan ===\n");
     for (int i = 0; i < sizeBiayaTindakan; i++) {
         printf("No.: %d | Aktivitas: %s | Biaya (Rp): %.2lf\n", biayaTindakanPasien[i]. No, biayaTindakanPasien[i].Aktivitas, biayaTindakanPasien[i].Biaya);
