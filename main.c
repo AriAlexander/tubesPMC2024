@@ -59,17 +59,23 @@ void laporanKeuangan();
 void analisisPasienPenyakit();
 void informasiKontrolPasien();
 
-int main(int argc, char *argv[]) {
+static void activate(GtkApplication *app, gpointer user_data) {
     GtkWidget *window;
 
-    // Inisialisasi GTK
-    gtk_init(&argc, &argv);
+    window = gtk_application_window_new(app);
 
-    // Membuat window
-    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_present(GTK_WINDOW(window));
+}
 
-    // Menampilkan window
-    gtk_widget_show(window);
+int main(int argc, char *argv[]) {
+    
+    GtkApplication *app = gtk_application_new("Ini.Apa.aja", G_APPLICATION_DEFAULT_FLAGS);
+
+    g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
+
+    int status = g_application_run(G_APPLICATION(app), argc, argv);
+
+    g_object_unref(app);
 
     // Load data pasien dari file CSV
     int sizeDataPasien, sizeRiwayatMedis, sizeBiayaTindakan;
@@ -133,10 +139,6 @@ int main(int argc, char *argv[]) {
                 printf("Pilihan tidak valid. Silakan coba lagi.\n");
         }
     }
-
-    // Main loop GTK
-    gtk_main();
-    
     return 0;
 }
 
@@ -187,7 +189,7 @@ void tampilkanRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiw
 }
 
 // Fungsi untuk menampilkan rincian biaya tindakan
-void tampilkanBiayaTindakan(Biaya_Tindakan* biayaTindakanPasien, int sreakan) {
+void tampilkanBiayaTindakan(Biaya_Tindakan* biayaTindakanPasien, int sizeBiayaTindakan) {
     printf("=== Rincian Biaya Tindakan ===\n");
     for (int i = 0; i < sizeBiayaTindakan; i++) {
         printf("No.: %d | Aktivitas: %s | Biaya (Rp): %.2lf\n", biayaTindakanPasien[i]. No, biayaTindakanPasien[i].Aktivitas, biayaTindakanPasien[i].Biaya);
