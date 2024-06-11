@@ -1,0 +1,162 @@
+<mxfile host="app.diagrams.net" modified="2024-06-10T04:20:45.325Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="O5Hsr-Vqiqk-RLILpkjY" version="24.5.2" type="onedrive">
+  <diagram name="Halaman-1" id="Zz-5cSAST-9Dv1S7MNW6">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5BNyNckIgp-UddNAA74F-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-1" target="5BNyNckIgp-UddNAA74F-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-1" value="cariDataPasien" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-2" target="5BNyNckIgp-UddNAA74F-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-2" value="mulai" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="65" y="120" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-4" target="5BNyNckIgp-UddNAA74F-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-4" value="nama pasien yang ingin dicari" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-6" target="5BNyNckIgp-UddNAA74F-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-6" value="clearInputBuffer" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="270" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="5BNyNckIgp-UddNAA74F-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="160" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-10" target="5BNyNckIgp-UddNAA74F-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-10" value="deklarasi variabel &quot;foundPasien&quot; dengan NULL" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="190" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-12" target="5BNyNckIgp-UddNAA74F-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-12" value="pengulangan sebanyak variabel &quot;count&quot; (jumlah pasien)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-14" target="5BNyNckIgp-UddNAA74F-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-14" target="5BNyNckIgp-UddNAA74F-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-14" value="nama pasien dalam struct = nama pasien yang hendak dicari" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="195" y="380" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-16" target="5BNyNckIgp-UddNAA74F-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-16" value="assign data pasien yang ditemukan ke dalam variabel &quot;foundPasien&quot;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-19" target="5BNyNckIgp-UddNAA74F-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-19" value="break" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="220" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-21" target="5BNyNckIgp-UddNAA74F-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-21" target="5BNyNckIgp-UddNAA74F-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-21" value="foundPasien" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="280" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-23" target="5BNyNckIgp-UddNAA74F-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-23" value="data pasien ditemukan: &quot;nama_lengkap&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="400" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-25" value="true" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-27" target="5BNyNckIgp-UddNAA74F-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-27" value="rincian data pasien yang ditemukan" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-29" target="5BNyNckIgp-UddNAA74F-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-29" value="data pasien tidak ditemukan" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-32" value="menghapus karakter &#39;\n&#39; dari input" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="195" y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-33" value="A" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="70" y="340" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-35" target="5BNyNckIgp-UddNAA74F-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-35" value="A" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="235" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-37" value="B" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="230" y="530" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-39" value="true" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="235" y="490" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-40" value="C" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="340" y="415" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-42" value="false" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="410" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-43" target="5BNyNckIgp-UddNAA74F-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-43" value="B" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="460" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-45" value="D" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="460" y="480" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-47" target="5BNyNckIgp-UddNAA74F-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-47" value="D" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="680" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-49" value="selesai" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-53" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-52" target="5BNyNckIgp-UddNAA74F-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-52" value="E" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="680" y="360" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5BNyNckIgp-UddNAA74F-54" target="5BNyNckIgp-UddNAA74F-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-54" value="C" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="360" y="300" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-56" value="E" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="560" y="300" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5BNyNckIgp-UddNAA74F-58" value="false" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="295" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

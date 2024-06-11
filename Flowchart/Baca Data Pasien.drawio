@@ -1,0 +1,184 @@
+<mxfile host="app.diagrams.net" modified="2024-06-10T07:33:49.425Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="v-SnvWqiaAZx-XsnImry" version="24.5.2" type="onedrive">
+  <diagram name="Halaman-1" id="6V_MZ7g3-PMqo3PxE8EJ">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-1" target="Viil5FITCZ7qNH2EQl_B-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-1" value="readDataPasien" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-2" target="Viil5FITCZ7qNH2EQl_B-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-2" value="mulai" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="65" y="110" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-4" target="Viil5FITCZ7qNH2EQl_B-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-4" value="membuka file csv data pasien dalam mode baca" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="35" y="180" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-6" target="Viil5FITCZ7qNH2EQl_B-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-6" target="Viil5FITCZ7qNH2EQl_B-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-6" value="file kosong" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="270" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-8" value="A" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="70" y="390" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-10" value="true" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-11" value="B" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="170" y="290" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-13" value="false" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-14" target="Viil5FITCZ7qNH2EQl_B-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-14" value="A" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="285" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-15" target="Viil5FITCZ7qNH2EQl_B-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-15" value="alokasi memori struct data pasien secara dinamis dengan batas maksimum sebesar variabel &quot;MAX_DATA_PASIEN&quot;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="120" width="130" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-17" target="Viil5FITCZ7qNH2EQl_B-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-17" value="inisialisasi variabel pointer &quot;count&quot; dengan nilai nol" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="265" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-19" target="Viil5FITCZ7qNH2EQl_B-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-19" value="skip header dari file" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-21" value="C" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="285" y="440" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-23" target="Viil5FITCZ7qNH2EQl_B-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-23" value="C" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-24" target="Viil5FITCZ7qNH2EQl_B-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-24" value="pembacaan setiap baris dalam file (pengulangan sepanjang keseluruhan baris dalam file)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="120" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-26" target="Viil5FITCZ7qNH2EQl_B-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-26" value="parsing baris menjadi token berdasarkan karakter &#39;;&#39;&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="260" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-28" target="Viil5FITCZ7qNH2EQl_B-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-28" value="deklarasi variabel &quot;Data_Pasien pasien&quot; untuk menyimpan data pasien" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-30" value="D" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="440" y="460" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-32" target="Viil5FITCZ7qNH2EQl_B-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-32" value="D" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="600" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-34" target="Viil5FITCZ7qNH2EQl_B-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-34" value="mengambil token dan menyimpannya ke dalam bidang-bidang yang sesuai di dalam struct &quot;pasien&quot;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-36" target="Viil5FITCZ7qNH2EQl_B-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-36" value="menggunakan fungsi &quot;atoi&quot; untuk mengonversi token menjadi integer (no. pasien, umur)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-38" target="Viil5FITCZ7qNH2EQl_B-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-38" value="menggunakan fungsi &quot;atoll&quot; untuk mengonversi token menjadi long integer (no. bpjs)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="360" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-40" value="E" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="600" y="480" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-42" target="Viil5FITCZ7qNH2EQl_B-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-42" value="E" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="760" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-43" target="Viil5FITCZ7qNH2EQl_B-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-43" value="menyimpan data pasien ke dalam array of structs &quot;dataPasien&quot;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-45" target="Viil5FITCZ7qNH2EQl_B-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-45" value="memperbarui variabel &quot;count&quot; sebanyak jumlah pasien yang telah dibaca" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="220" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-47" target="Viil5FITCZ7qNH2EQl_B-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-47" value="menutup file" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="320" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-52" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-49" target="Viil5FITCZ7qNH2EQl_B-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-49" value="mengembalikan&lt;div&gt;array of structs&lt;/div&gt;&lt;div&gt;&quot;dataPasien&quot;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-51" value="F" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="760" y="480" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-53" target="Viil5FITCZ7qNH2EQl_B-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-53" value="F" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="920" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-54" value="selesai" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="915" y="120" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-56" target="Viil5FITCZ7qNH2EQl_B-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-56" value="menampilkan pesan error" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Viil5FITCZ7qNH2EQl_B-58" target="Viil5FITCZ7qNH2EQl_B-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Viil5FITCZ7qNH2EQl_B-58" value="B" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="920" y="270" width="40" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

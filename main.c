@@ -59,7 +59,18 @@ void laporanKeuangan();
 void analisisPasienPenyakit();
 void informasiKontrolPasien();
 
-int main() {
+int main(int argc, char *argv[]) {
+    GtkWidget *window;
+
+    // Inisialisasi GTK
+    gtk_init(&argc, &argv);
+
+    // Membuat window
+    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+
+    // Menampilkan window
+    gtk_widget_show(window);
+
     // Load data pasien dari file CSV
     int sizeDataPasien, sizeRiwayatMedis, sizeBiayaTindakan;
     Data_Pasien* dataPasien = readDataPasien("Data Pasien.csv", &sizeDataPasien);
@@ -122,6 +133,10 @@ int main() {
                 printf("Pilihan tidak valid. Silakan coba lagi.\n");
         }
     }
+
+    // Main loop GTK
+    gtk_main();
+    
     return 0;
 }
 

@@ -1,0 +1,92 @@
+<mxfile host="app.diagrams.net" modified="2024-06-10T03:39:12.696Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="klnQ6OopIqclF9-9fcTb" version="24.5.2" type="onedrive">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-0" target="3hPDEKlp_DZgUl8HOcMa-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-0" value="mulai" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="90" y="120" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-1" target="3hPDEKlp_DZgUl8HOcMa-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-1" value="nomor pasien yang ingin dihapus datanya" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="200" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-3" target="3hPDEKlp_DZgUl8HOcMa-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-3" value="pengulangan sebanyak variabel &quot;count&quot; (jumlah pasien)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-5" target="3hPDEKlp_DZgUl8HOcMa-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-5" target="3hPDEKlp_DZgUl8HOcMa-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="435" />
+              <mxPoint x="180" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-5" value="nomor pasien dalam struct = nomor pasien yang ingin dihapus datanya" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="55" y="380" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-7" target="3hPDEKlp_DZgUl8HOcMa-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-7" value="pengulangan sebanyak variabel &quot;count&quot; (jumlah pasien) dikurang satu" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="540" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-9" value="true" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="100" y="490" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-10" target="3hPDEKlp_DZgUl8HOcMa-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-10" value="penggeseran elemen-elemen dalam struct ke kiri untuk menimpa data pasien yang hendak dihapus" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="660" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-12" target="3hPDEKlp_DZgUl8HOcMa-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-12" value="variabel &quot;count&quot; (jumlah pasien) dikurang satu" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="780" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-14" target="3hPDEKlp_DZgUl8HOcMa-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="900" />
+              <mxPoint x="40" y="1065" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-14" value="data pasien nomor &#39;X&#39; dengan nama &#39;Y&#39; telah dihapus dari database" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="870" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-17" target="3hPDEKlp_DZgUl8HOcMa-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-17" value="data pasien tidak ditemukan" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="970" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-19" value="false" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="170" y="430" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-20" value="selesai" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="85" y="1050" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3hPDEKlp_DZgUl8HOcMa-23" target="3hPDEKlp_DZgUl8HOcMa-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3hPDEKlp_DZgUl8HOcMa-23" value="hapusDataPasien" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="50" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net" modified="2024-06-10T06:52:43.043Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="lpZTXmdZX8T3Kt_P2eOt" version="24.5.2" type="onedrive">
+  <diagram name="Halaman-1" id="p6kYa2rR6gdoD2w3cXJz">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xxz7X1vMwzBr1nRQ8OYn-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xxz7X1vMwzBr1nRQ8OYn-2" target="xxz7X1vMwzBr1nRQ8OYn-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xxz7X1vMwzBr1nRQ8OYn-2" value="tampilkanDataPasien" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xxz7X1vMwzBr1nRQ8OYn-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xxz7X1vMwzBr1nRQ8OYn-4" target="xxz7X1vMwzBr1nRQ8OYn-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xxz7X1vMwzBr1nRQ8OYn-4" value="mulai" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="xxz7X1vMwzBr1nRQ8OYn-7" value="selesai" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="380" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="xxz7X1vMwzBr1nRQ8OYn-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xxz7X1vMwzBr1nRQ8OYn-8" target="xxz7X1vMwzBr1nRQ8OYn-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xxz7X1vMwzBr1nRQ8OYn-8" value="pengulangan sebanyak variabel &quot;sizeDataPasien&quot; (jumlah pasien)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="45" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xxz7X1vMwzBr1nRQ8OYn-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xxz7X1vMwzBr1nRQ8OYn-10" target="xxz7X1vMwzBr1nRQ8OYn-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xxz7X1vMwzBr1nRQ8OYn-10" value="menampilkan rincian data pasien (no., nama, alamat, dll.)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="45" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
