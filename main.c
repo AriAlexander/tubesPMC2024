@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include <gtk/gtk.h>
 
 // Maksimal jumlah pasien yang bisa di-load
 #define MAX_PASIEN 100
@@ -59,24 +58,7 @@ void laporanKeuangan();
 void analisisPasienPenyakit();
 void informasiKontrolPasien();
 
-static void activate(GtkApplication *app, gpointer user_data) {
-    GtkWidget *window;
-
-    window = gtk_application_window_new(app);
-
-    gtk_window_present(GTK_WINDOW(window));
-}
-
-int main(int argc, char *argv[]) {
-    
-    GtkApplication *app = gtk_application_new("Ini.Apa.aja", G_APPLICATION_DEFAULT_FLAGS);
-
-    g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
-
-    int status = g_application_run(G_APPLICATION(app), argc, argv);
-
-    g_object_unref(app);
-
+int main() {
     // Load data pasien dari file CSV
     int sizeDataPasien, sizeRiwayatMedis, sizeBiayaTindakan;
     Data_Pasien* dataPasien = readDataPasien("Data Pasien.csv", &sizeDataPasien);
@@ -365,33 +347,39 @@ void cariDataPasien(Data_Pasien* dataPasien, int count) {
 void tambahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int* count) {
     Riwayat_Medis_Pasien riwayatBaru;
 
-    printf("Riwayat Medis Baru\n");
+    printf("== Riwayat Medis Baru ==\n\n");
     riwayatBaru.No = *count+1;
-    printf("No: %d", riwayatBaru.No);
+    printf("No: %d\n", riwayatBaru.No);
     
     printf("Tanggal: ");
     fgets(riwayatBaru.Tanggal, sizeof(riwayatBaru.Tanggal), stdin);
     riwayatBaru.Tanggal[strcspn(riwayatBaru.Tanggal, "\n")] = '\0';
+    getchar();
 
     printf("ID Pasien: ");
     fgets(riwayatBaru.ID_Pasien, sizeof(riwayatBaru.ID_Pasien), stdin);
     riwayatBaru.ID_Pasien[strcspn(riwayatBaru.ID_Pasien, "\n")] = '\0';
+    getchar();
 
     printf("Diagnosis: ");
     fgets(riwayatBaru.Diagnosis, sizeof(riwayatBaru.Diagnosis), stdin);
     riwayatBaru.Diagnosis[strcspn(riwayatBaru.Diagnosis, "\n")] = '\0';
+    getchar();
 
     printf("Tindakan: ");
     fgets(riwayatBaru.Tindakan, sizeof(riwayatBaru.Tindakan), stdin);
     riwayatBaru.Tindakan[strcspn(riwayatBaru.Tindakan, "\n")] = '\0';
+    getchar();
 
     printf("Kontrol: ");
     fgets(riwayatBaru.Kontrol, sizeof(riwayatBaru.Kontrol), stdin);
     riwayatBaru.Kontrol[strcspn(riwayatBaru.Kontrol, "\n")] = '\0';
+    getchar();
+    clearInputBuffer();
 
     printf("Biaya: ");
     scanf("%lf", &riwayatBaru.Biaya);
-    clearInputBuffer();
+    getchar();
 
     riwayatMedis[(*count)++] = riwayatBaru;
 
@@ -400,7 +388,7 @@ void tambahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int* count) {
 
 void ubahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int count) {
     Riwayat_Medis_Pasien perubahan; int no; 
-    printf("Masukkan nomor riwayat medis yang akan diubah: \n");
+    printf("Masukkan nomor riwayat medis yang akan diubah: ");
     scanf("%d", &no);
     clearInputBuffer();
 
@@ -409,6 +397,8 @@ void ubahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int count) {
         return;
     }
 
+    perubahan.No = no;
+    
     printf("Tanggal: ");
     fgets(perubahan.Tanggal, sizeof(perubahan.Tanggal), stdin);
     perubahan.Tanggal[strcspn(perubahan.Tanggal, "\n")] = '\0';
@@ -439,6 +429,7 @@ void ubahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int count) {
 }
 void hapusRiwayatMedis() {}
 void cariRiwayatMedis() {}
+
 void laporanKeuangan(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMedis) {
     // Struktur untuk menyimpan pendapatan per bulan dan per tahun
     typedef struct {
