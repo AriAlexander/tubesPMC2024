@@ -124,7 +124,7 @@ int main(int argc, char *argv[]) {
                 cariRiwayatMedis();
                 break;
             case 12:
-                laporanKeuangan();
+                laporanKeuangan(riwayatMedisPasien, sizeRiwayatMedis);
                 break;
             case 13:
                 analisisPasienPenyakit();
@@ -439,6 +439,88 @@ void ubahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int count) {
 }
 void hapusRiwayatMedis() {}
 void cariRiwayatMedis() {}
-void laporanKeuangan() {}
+void laporanKeuangan(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMedis) {
+    // Struktur untuk menyimpan pendapatan per bulan dan per tahun
+    typedef struct {
+        int tahun;
+        double pendapatanBulanan[12];
+        int jumlahDataBulanan[12];
+    } PendapatanTahunan;
+    
+    PendapatanTahunan* pendapatan = NULL;
+    int jumlahTahun = 0;
+
+    for (int i = 0; i < sizeRiwayatMedis; i++) {
+        char* token = strtok(riwayatMedisPasien[i].Tanggal, " ");
+        int hari = atoi(token);
+        token = strtok(NULL, " ");
+        char* namaBulan = token;
+        token = strtok(NULL, " ");
+        int tahun = atoi(token);
+        token="";
+
+        int bulan = 0;
+        if (strcmp(namaBulan, "Januari") == 0) bulan = 0;
+        else if (strcmp(namaBulan, "Februari") == 0) bulan = 1;
+        else if (strcmp(namaBulan, "Maret") == 0) bulan = 2;
+        else if (strcmp(namaBulan, "April") == 0) bulan = 3;
+        else if (strcmp(namaBulan, "Mei") == 0) bulan = 4;
+        else if (strcmp(namaBulan, "Juni") == 0) bulan = 5;
+        else if (strcmp(namaBulan, "Juli") == 0) bulan = 6;
+        else if (strcmp(namaBulan, "Agustus") == 0) bulan = 7;
+        else if (strcmp(namaBulan, "September") == 0) bulan = 8;
+        else if (strcmp(namaBulan, "Oktober") == 0) bulan = 9;
+        else if (strcmp(namaBulan, "November") == 0) bulan = 10;
+        else if (strcmp(namaBulan, "Desember") == 0) bulan = 11;
+
+        // Cari apakah tahun sudah ada dalam array
+        int tahunDitemukan = -1;
+        for (int j = 0; j < jumlahTahun; j++) {
+            if (pendapatan[j].tahun == tahun) {
+                tahunDitemukan = j;
+                break;
+            }
+        }
+
+        // Jika tahun belum ada, tambahkan tahun baru ke array
+        if (tahunDitemukan == -1) {
+            jumlahTahun++;
+            pendapatan = (PendapatanTahunan*)realloc(pendapatan, jumlahTahun * sizeof(PendapatanTahunan));
+            pendapatan[jumlahTahun - 1].tahun = tahun;
+            memset(pendapatan[jumlahTahun - 1].pendapatanBulanan, 0, 12 * sizeof(double));
+            memset(pendapatan[jumlahTahun - 1].jumlahDataBulanan, 0, 12 * sizeof(int));
+            tahunDitemukan = jumlahTahun - 1;
+        }
+
+        // Tambahkan biaya ke pendapatan bulanan dan tahunan
+        pendapatan[tahunDitemukan].pendapatanBulanan[bulan] += riwayatMedisPasien[i].Biaya;
+        pendapatan[tahunDitemukan].jumlahDataBulanan[bulan]++;
+    }
+
+    char* monthNames[] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+    // Hitung dan tampilkan rata-rata pendapatan per bulan dan per tahun
+    for (int i = 0; i < jumlahTahun; i++) {
+        double totalPendapatanTahunan = 0;
+        int totalDataTahunan = 0;
+        printf("Tahun %d:\n", pendapatan[i].tahun);
+        for (int j = 0; j < 12; j++) {
+            double rataRataBulanan = 0;
+            if (pendapatan[i].jumlahDataBulanan[j] > 0) {
+                rataRataBulanan = pendapatan[i].pendapatanBulanan[j] / pendapatan[i].jumlahDataBulanan[j];
+            }
+            printf("  Bulan %s: Total = %.2f, Rata-rata = %.2f\n", monthNames[j], pendapatan[i].pendapatanBulanan[j], rataRataBulanan);
+            totalPendapatanTahunan += pendapatan[i].pendapatanBulanan[j];
+            totalDataTahunan += pendapatan[i].jumlahDataBulanan[j];
+        }
+        double rataRataTahunan = 0;
+        if (totalDataTahunan > 0) {
+            rataRataTahunan = totalPendapatanTahunan / totalDataTahunan;
+        }
+        printf("  Total Pendapatan Tahunan: %.2f\n  Rata-rata Pendapatan Tahunan: %.2f\n\n", totalPendapatanTahunan, rataRataTahunan);
+    }
+
+    // Bersihkan memori
+    free(pendapatan);
+}
 void analisisPasienPenyakit() {}
 void informasiKontrolPasien() {}
