@@ -46,8 +46,9 @@ void tampilkanDataPasien(Data_Pasien* dataPasien, int count);
 void tampilkanRiwayatMedis(Riwayat_Medis_Pasien* dataRiwayatMedi, int count);
 void tampilkanBiayaTindakan(Biaya_Tindakan* biayaTindakan, int count);
 void clearInputBuffer();
-void tambahDataPasien();
-void ubahDataPasien();
+void addData(Data_Pasien* data, int* count);
+void modifyData(Data_Pasien* data, int count);
+void saveData(char* filename, Data_Pasien* data, int count);
 void hapusDataPasien(Data_Pasien* dataPasien, Riwayat_Medis_Pasien* riwayatMedisPasien, int* count);
 void cariDataPasien(Data_Pasien* dataPasien, int count);
 void tambahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int* count);
@@ -60,6 +61,7 @@ void informasiKontrolPasien();
 
 int main() {
     // Load data pasien dari file CSV
+    char* filename = "Data Pasien.csv";
     int sizeDataPasien, sizeRiwayatMedis, sizeBiayaTindakan;
     Data_Pasien* dataPasien = readDataPasien("Data Pasien.csv", &sizeDataPasien);
     Riwayat_Medis_Pasien* riwayatMedisPasien = readRiwayatMedis("Riwayat Datang, Diagnosis, dan Tindakan.csv", &sizeRiwayatMedis);    
@@ -70,6 +72,7 @@ int main() {
         tampilkanMenuUtama();
         printf("Masukkan pilihan fitur yang ingin digunakan: ");
         scanf("%d", &pilihan);
+        getchar();
         printf("\n");
 
         switch (pilihan) {
@@ -82,10 +85,12 @@ int main() {
             case 3:
                 tampilkanBiayaTindakan(biayaTindakan, sizeBiayaTindakan);
             case 4:
-                tambahDataPasien();
+                addData(dataPasien, &sizeDataPasien);
+                saveData(filename, dataPasien, sizeDataPasien);
                 break;
             case 5:
-                ubahDataPasien();
+                modifyData(dataPasien, sizeDataPasien);
+                saveData(filename, dataPasien, sizeDataPasien);
                 break;
             case 6:
                 hapusDataPasien(dataPasien, riwayatMedisPasien, &sizeDataPasien);
@@ -116,6 +121,7 @@ int main() {
                 break;
             case 15:
                 printf("Terima kasih telah menggunakan aplikasi ini.\n");
+                free(dataPasien);
                 exit(0);
             default:
                 printf("Pilihan tidak valid. Silakan coba lagi.\n");
@@ -291,28 +297,6 @@ Biaya_Tindakan* readBiayaTindakan(const char* filename, int* count) {
     return biayaTindakan;
 } // test
 // Awal Bagian Dhika
-// Function to load data from the CSV file into an array
-int countData(char* filename, Data_Pasien* data) {
-    FILE* file = fopen(filename, "r");
-    int count = 0;
-    char buffer[1024];
-
-    if (file != NULL) {
-        // Skip the header line
-        fgets(buffer, sizeof(buffer), file);
-
-        while (fgets(buffer, sizeof(buffer), file) && count < MAX_PASIEN) {
-            sscanf(buffer, "%d;%[^;];%[^;];%[^;];%[^;];%[^;];%d;%lld;%[^;]", &data[count].No, data[count].Nama_Lengkap, data[count].Alamat, data[count].Kota, data[count].Tempat_Lahir, data[count].Tanggal_Lahir, &data[count].Umur, &data[count].No_BPJS, data[count].ID_Pasien);
-            count++;
-        }
-        fclose(file);
-    } else {
-        printf("Unable to open the file.\n");
-    }
-
-    return count;
-}
-
 // Function to add data to the array
 void addData(Data_Pasien* data, int* count) {
     if (*count < MAX_PASIEN) {
@@ -347,8 +331,6 @@ void addData(Data_Pasien* data, int* count) {
         char temp2[50];
         fgets(temp2, sizeof(temp2), stdin);
         sscanf(temp2, "%lld", &data[*count].No_BPJS);
-        // fgets(data[*count].No_BPJS, sizeof(data[*count].No_BPJS), stdin);
-        // data[*count].No_BPJS[strcspn(data[*count].No_BPJS, "\n")] = 0;  // remove trailing newline
 
         printf("Enter ID Pasien: ");
         fgets(data[*count].ID_Pasien, sizeof(data[*count].ID_Pasien), stdin);
@@ -401,8 +383,6 @@ void modifyData(Data_Pasien* data, int count) {
             char temp2[50];
             fgets(temp2, sizeof(temp2), stdin);
             sscanf(temp2, "%lld", &data[i].No_BPJS);
-            // fgets(data[i].No_BPJS, sizeof(data[i].No_BPJS), stdin);
-            // data[i].No_BPJS[strcspn(data[i].No_BPJS, "\n")] = 0;  // remove trailing newline
 
             printf("Enter ID Pasien: ");
             fgets(data[i].ID_Pasien, sizeof(data[i].ID_Pasien), stdin);
@@ -429,7 +409,6 @@ void saveData(char* filename, Data_Pasien* data, int count) {
             data[i].Kota[strcspn(data[i].Kota, "\n")] = 0;
             data[i].Tempat_Lahir[strcspn(data[i].Tempat_Lahir, "\n")] = 0;
             data[i].Tanggal_Lahir[strcspn(data[i].Tanggal_Lahir, "\n")] = 0;
-            // data[i].No_BPJS[strcspn(data[i].No_BPJS, "\n")] = 0;
             data[i].ID_Pasien[strcspn(data[i].ID_Pasien, "\n")] = 0;
 
             fprintf(file, "%d;%s;%s;%s;%s;%s;%d;%lld;%s\n", data[i].No, data[i].Nama_Lengkap, data[i].Alamat, data[i].Kota, data[i].Tempat_Lahir, data[i].Tanggal_Lahir, data[i].Umur, data[i].No_BPJS, data[i].ID_Pasien);
@@ -438,21 +417,6 @@ void saveData(char* filename, Data_Pasien* data, int count) {
     } else {
         printf("Unable to open the file.\n");
     }
-}
-void tambahDataPasien() {
-    char* filename = "Data Pasien.csv";
-    Data_Pasien data[MAX_PASIEN];
-    int count = countData(filename, data);
-    addData(data, &count);
-    saveData(filename, data, count);
-}
-
-void ubahDataPasien() {
-    char* filename = "Data Pasien.csv";
-    Data_Pasien data[MAX_PASIEN];
-    int count = countData(filename, data);
-    modifyData(data, count);
-    saveData(filename, data, count);
 }
 // Akhir Bagian Dhika
 
