@@ -46,19 +46,10 @@ void tampilkanDataPasien(Data_Pasien* dataPasien, int count);
 void tampilkanRiwayatMedis(Riwayat_Medis_Pasien* dataRiwayatMedi, int count);
 void tampilkanBiayaTindakan(Biaya_Tindakan* biayaTindakan, int count);
 void clearInputBuffer();
-<<<<<<< HEAD
-int countData(char* filename, Data_Pasien* data);
 void addData(Data_Pasien* data, int* count);
 void modifyData(Data_Pasien* data, int count);
 void saveData(char* filename, Data_Pasien* data, int count);
-void tambahDataPasien();
-void ubahDataPasien();
-=======
-void addData(Data_Pasien* data, int* count);
-void modifyData(Data_Pasien* data, int count);
-void saveData(char* filename, Data_Pasien* data, int count);
->>>>>>> cab54064c705dc5c2822815f1477bba83b35f2dc
-void hapusDataPasien(Data_Pasien* dataPasien, Riwayat_Medis_Pasien* riwayatMedisPasien, int* count);
+void hapusDataPasien(Data_Pasien* dataPasien, int* count);
 void cariDataPasien(Data_Pasien* dataPasien, int count);
 void tambahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int* count);
 void ubahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int count);
@@ -104,7 +95,7 @@ int main() {
                 saveData(filename, dataPasien, sizeDataPasien);
                 break;
             case 6:
-                hapusDataPasien(dataPasien, riwayatMedisPasien, &sizeDataPasien);
+                hapusDataPasien(dataPasien, &sizeDataPasien);
                 break;
             case 7:
                 cariDataPasien(dataPasien, sizeDataPasien);
@@ -133,7 +124,6 @@ int main() {
             case 15:
                 tulisDataPasien("Data Pasien.csv", dataPasien, sizeDataPasien);
                 tulisRiwayatMedisPasien("Riwayat Datang, Diagnosis, dan Tindakan.csv", riwayatMedisPasien, sizeRiwayatMedis);
-            case 16:
                 free(dataPasien);
                 free(riwayatMedisPasien);
                 printf("Terima kasih telah menggunakan aplikasi ini.\n");
@@ -166,8 +156,7 @@ void tampilkanMenuUtama() {
     printf("12. Laporan Keuangan\n");
     printf("13. Analisis Pasien dan Penyakit\n");
     printf("14. Informasi Kontrol Pasien\n");
-    printf("15. Finalisasi Data\n");
-    printf("16. Keluar\n");
+    printf("15. Keluar\n");
     printf("\n");
 }
 
@@ -444,28 +433,9 @@ void saveData(char* filename, Data_Pasien* data, int count) {
         printf("Unable to open the file.\n");
     }
 }
-<<<<<<< HEAD
-
-void tambahDataPasien() {
-    char* filename = "Data Pasien.csv";
-    Data_Pasien data[MAX_PASIEN];
-    int count = countData(filename, data);
-    addData(data, &count);
-    saveData(filename, data, count);
-}
-
-void ubahDataPasien() {
-    char* filename = "Data Pasien.csv";
-    Data_Pasien data[MAX_PASIEN];
-    int count = countData(filename, data);
-    modifyData(data, count);
-    saveData(filename, data, count);
-}
-=======
->>>>>>> cab54064c705dc5c2822815f1477bba83b35f2dc
 // Akhir Bagian Dhika
 
-void hapusDataPasien(Data_Pasien* dataPasien, Riwayat_Medis_Pasien* riwayatMedisPasien, int* count) {
+void hapusDataPasien(Data_Pasien* dataPasien, int* count) {
     int no_pasien;
     printf("Masukkan nomor pasien yang ingin dihapus datanya! ");
     scanf("%d", &no_pasien);
@@ -479,7 +449,6 @@ void hapusDataPasien(Data_Pasien* dataPasien, Riwayat_Medis_Pasien* riwayatMedis
             // Shift elements to the left
             for (int j = i; j < *count - 1; j++) {
                 dataPasien[j] = dataPasien[j + 1];
-                riwayatMedisPasien[j] = riwayatMedisPasien[j + 1];
             }
             (*count)--;
             printf("Data pasien nomor %d dengan nama %s telah dihapus.", no_pasien, nama_pasien);
@@ -525,32 +494,25 @@ void tambahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int* count) {
     printf("Tanggal: ");
     fgets(riwayatBaru.Tanggal, sizeof(riwayatBaru.Tanggal), stdin);
     riwayatBaru.Tanggal[strcspn(riwayatBaru.Tanggal, "\n")] = '\0';
-    getchar();
 
     printf("ID Pasien: ");
     fgets(riwayatBaru.ID_Pasien, sizeof(riwayatBaru.ID_Pasien), stdin);
     riwayatBaru.ID_Pasien[strcspn(riwayatBaru.ID_Pasien, "\n")] = '\0';
-    getchar();
 
     printf("Diagnosis: ");
     fgets(riwayatBaru.Diagnosis, sizeof(riwayatBaru.Diagnosis), stdin);
     riwayatBaru.Diagnosis[strcspn(riwayatBaru.Diagnosis, "\n")] = '\0';
-    getchar();
 
     printf("Tindakan: ");
     fgets(riwayatBaru.Tindakan, sizeof(riwayatBaru.Tindakan), stdin);
     riwayatBaru.Tindakan[strcspn(riwayatBaru.Tindakan, "\n")] = '\0';
-    getchar();
 
     printf("Kontrol: ");
     fgets(riwayatBaru.Kontrol, sizeof(riwayatBaru.Kontrol), stdin);
     riwayatBaru.Kontrol[strcspn(riwayatBaru.Kontrol, "\n")] = '\0';
-    getchar();
-    clearInputBuffer();
 
     printf("Biaya: ");
     scanf("%lf", &riwayatBaru.Biaya);
-    getchar();
 
     riwayatMedis[(*count)++] = riwayatBaru;
 
