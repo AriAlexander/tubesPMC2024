@@ -461,10 +461,13 @@ void hapusDataPasien(Data_Pasien* dataPasien, int* count) {
 void cariDataPasien(Data_Pasien* dataPasien, int* count) {
     char nama_pasien[50];
     printf("Masukkan nama pasien yang ingin dicari! ");
-    fgets(nama_pasien, sizeof(nama_pasien), stdin);
 
-    nama_pasien[strcspn(nama_pasien, "\n")] = '\0'; // remove newline character
-    clearInputBuffer();
+    int c;
+    int i = 0;
+    while ((c = getchar()) != '\n' && c != EOF) {
+        nama_pasien[i++] = c;
+    }
+    nama_pasien[i] = '\0';
 
     Data_Pasien* foundPasien = NULL;
     for (int i = 0; i < *count; i++) {
@@ -476,7 +479,7 @@ void cariDataPasien(Data_Pasien* dataPasien, int* count) {
 
     if (foundPasien) {
         printf("Data pasien ditemukan: %s\n", foundPasien->Nama_Lengkap);
-        printf("No.: %d| Nama Lengkap: %s| Alamat: %s| Kota: %s| Tempat Lahir: %s| Tanggal Lahir: %s| Umur: %d| No. BPJS: %lld| ID Pasien: %s\n",
+        printf("No.: %d | Nama Lengkap: %s | Alamat: %s | Kota: %s | Tempat Lahir: %s | Tanggal Lahir: %s | Umur: %d | No. BPJS: %lld | ID Pasien: %s\n",
          foundPasien->No, foundPasien->Nama_Lengkap, foundPasien->Alamat, foundPasien->Kota, foundPasien->Tempat_Lahir, foundPasien->Tanggal_Lahir, 
          foundPasien->Umur, foundPasien->No_BPJS, foundPasien->ID_Pasien);
     } else {

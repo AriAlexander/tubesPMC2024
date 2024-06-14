@@ -20,13 +20,14 @@ typedef struct {
 } Data_Pasien;
 
 Data_Pasien* readDataPasien(const char* filename, int* count);
-void hapusDataPasien(Data_Pasien* dataPasien, int* count);
+void cariDataPasien(Data_Pasien* dataPasien, int* count);
+void clearInputBuffer();
 
 int main() {
     // Load data pasien dari file CSV
     int sizeDataPasien;
     Data_Pasien* dataPasien = readDataPasien("Data Pasien.csv", &sizeDataPasien);
-    hapusDataPasien(dataPasien, &sizeDataPasien);
+    cariDataPasien(dataPasien, &sizeDataPasien);
     return 0;
 }
 
@@ -79,25 +80,37 @@ Data_Pasien* readDataPasien(const char* filename, int* count) {
     return dataPasien;
 }
 
-void hapusDataPasien(Data_Pasien* dataPasien, int* count) {
-    int no_pasien;
-    printf("Masukkan nomor pasien yang ingin dihapus datanya! ");
-    scanf("%d", &no_pasien);
+void cariDataPasien(Data_Pasien* dataPasien, int* count) {
+    char nama_pasien[50];
+    printf("Masukkan nama pasien yang ingin dicari! ");
+    fflush(stdout);
 
-    int i;
-    for (i = 0; i < *count; i++) {
-        if (dataPasien[i].No == no_pasien) {
-            char nama_pasien[50] = "";
-            strcpy(nama_pasien, dataPasien[i].Nama_Lengkap);
+    // int c;
+    // int i = 0;
+    // while ((c = getchar()) != '\n' && c != EOF) {
+    //     nama_pasien[i++] = c;
+    // }
+    // nama_pasien[i] = '\0';
 
-            // Shift elements to the left
-            for (int j = i; j < *count - 1; j++) {
-                dataPasien[j] = dataPasien[j + 1];
-            }
-            (*count)--;
-            printf("Data pasien nomor %d dengan nama %s telah dihapus.", no_pasien, nama_pasien);
-            return;
+    Data_Pasien* foundPasien = NULL;
+    for (int i = 0; i < *count; i++) {
+        if (strcmp(dataPasien[i].Nama_Lengkap, nama_pasien) == 0) {
+            foundPasien = &dataPasien[i];
+            break;
         }
     }
-    printf("Data pasien tidak ditemukan\n");
+
+    if (foundPasien) {
+        printf("Data pasien ditemukan: %s\n", foundPasien->Nama_Lengkap);
+        printf("No.: %d| Nama Lengkap: %s| Alamat: %s| Kota: %s| Tempat Lahir: %s| Tanggal Lahir: %s| Umur: %d| No. BPJS: %lld| ID Pasien: %s\n",
+         foundPasien->No, foundPasien->Nama_Lengkap, foundPasien->Alamat, foundPasien->Kota, foundPasien->Tempat_Lahir, foundPasien->Tanggal_Lahir, 
+         foundPasien->Umur, foundPasien->No_BPJS, foundPasien->ID_Pasien);
+    } else {
+        printf("Data pasien tidak ditemukan\n");
+    }
+}
+
+void clearInputBuffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
 }
