@@ -46,6 +46,10 @@ void tampilkanDataPasien(Data_Pasien* dataPasien, int count);
 void tampilkanRiwayatMedis(Riwayat_Medis_Pasien* dataRiwayatMedi, int count);
 void tampilkanBiayaTindakan(Biaya_Tindakan* biayaTindakan, int count);
 void clearInputBuffer();
+int countData(char* filename, Data_Pasien* data);
+void addData(Data_Pasien* data, int* count);
+void modifyData(Data_Pasien* data, int count);
+void saveData(char* filename, Data_Pasien* data, int count);
 void tambahDataPasien();
 void ubahDataPasien();
 void hapusDataPasien(Data_Pasien* dataPasien, Riwayat_Medis_Pasien* riwayatMedisPasien, int* count);
@@ -54,9 +58,11 @@ void tambahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int* count);
 void ubahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int count);
 void hapusRiwayatMedis();
 void cariRiwayatMedis();
-void laporanKeuangan();
+void laporanKeuangan(Riwayat_Medis_Pasien *riwayatMedisPasien, int sizeRiwayatMedis);
 void analisisPasienPenyakit();
 void informasiKontrolPasien();
+void tulisDataPasien(const char* filename, Data_Pasien* dataPasien, int count);
+void tulisRiwayatMedisPasien(const char* fileName, Riwayat_Medis_Pasien* riwayatMedisPasien, int count);
 
 int main() {
     // Load data pasien dari file CSV
@@ -115,6 +121,11 @@ int main() {
                 informasiKontrolPasien();
                 break;
             case 15:
+                tulisDataPasien("Data Pasien.csv", dataPasien, sizeDataPasien);
+                tulisRiwayatMedisPasien("Riwayat Datang, Diagnosis, dan Tindakan.csv", riwayatMedisPasien, sizeRiwayatMedis);
+            case 16:
+                free(dataPasien);
+                free(riwayatMedisPasien);
                 printf("Terima kasih telah menggunakan aplikasi ini.\n");
                 exit(0);
             default:
@@ -144,7 +155,8 @@ void tampilkanMenuUtama() {
     printf("12. Laporan Keuangan\n");
     printf("13. Analisis Pasien dan Penyakit\n");
     printf("14. Informasi Kontrol Pasien\n");
-    printf("15. Keluar\n");
+    printf("15. Finalisasi Data\n");
+    printf("16. Keluar\n");
     printf("\n");
 }
 
@@ -200,23 +212,31 @@ Data_Pasien* readDataPasien(const char* filename, int* count) {
     while (fgets(line, 1024, file)) {
         char* token = strtok(line, ";");
         Data_Pasien pasien;
-        pasien.No = atoi(token);
+        if (token) pasien.No = atoi(token);
         token = strtok(NULL, ";");
-        strcpy(pasien.Nama_Lengkap, token);
+        if (token) strncpy(pasien.Nama_Lengkap, token, sizeof(pasien.Nama_Lengkap) - 1);
         token = strtok(NULL, ";");
-        strcpy(pasien.Alamat, token);
+        if (token) strncpy(pasien.Alamat, token, sizeof(pasien.Alamat) - 1);
         token = strtok(NULL, ";");
-        strcpy(pasien.Kota, token);
+        if (token) strncpy(pasien.Kota, token, sizeof(pasien.Kota) - 1);
         token = strtok(NULL, ";");
-        strcpy(pasien.Tempat_Lahir, token);
+        if (token) strncpy(pasien.Tempat_Lahir, token, sizeof(pasien.Tempat_Lahir) - 1);
         token = strtok(NULL, ";");
-        strcpy(pasien.Tanggal_Lahir, token);
+        if (token) strncpy(pasien.Tanggal_Lahir, token, sizeof(pasien.Tanggal_Lahir) - 1);
         token = strtok(NULL, ";");
-        pasien.Umur = atoi(token);
+        if (token) pasien.Umur = atoi(token);
         token = strtok(NULL, ";");
-        pasien.No_BPJS = atoll(token);
+        if (token) pasien.No_BPJS = atoll(token);
         token = strtok(NULL, "\n");
-        strcpy(pasien.ID_Pasien, token);
+        if (token) strncpy(pasien.ID_Pasien, token, sizeof(pasien.ID_Pasien) - 1);
+
+        // Ensure null-termination
+        pasien.Nama_Lengkap[sizeof(pasien.Nama_Lengkap) - 1] = '\0';
+        pasien.Alamat[sizeof(pasien.Alamat) - 1] = '\0';
+        pasien.Kota[sizeof(pasien.Kota) - 1] = '\0';
+        pasien.Tempat_Lahir[sizeof(pasien.Tempat_Lahir) - 1] = '\0';
+        pasien.Tanggal_Lahir[sizeof(pasien.Tanggal_Lahir) - 1] = '\0';
+        pasien.ID_Pasien[sizeof(pasien.ID_Pasien) - 1] = '\0';
 
         dataPasien[(*count)++] = pasien;
     }
@@ -290,6 +310,7 @@ Biaya_Tindakan* readBiayaTindakan(const char* filename, int* count) {
     fclose(file);
     return biayaTindakan;
 } // test
+
 // Awal Bagian Dhika
 // Function to load data from the CSV file into an array
 int countData(char* filename, Data_Pasien* data) {
@@ -439,6 +460,7 @@ void saveData(char* filename, Data_Pasien* data, int count) {
         printf("Unable to open the file.\n");
     }
 }
+
 void tambahDataPasien() {
     char* filename = "Data Pasien.csv";
     Data_Pasien data[MAX_PASIEN];
@@ -677,3 +699,57 @@ void laporanKeuangan(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMe
 }
 void analisisPasienPenyakit() {}
 void informasiKontrolPasien() {}
+
+// Fungsi untuk menulis kembali data pasien ke file CSV
+void tulisDataPasien(const char* filename, Data_Pasien* dataPasien, int count) {
+    FILE* file = fopen(filename, "w");
+    if (!file) {
+        printf("Error opening file %s\n", filename);
+        return;
+    }
+
+    // Tulis header
+    fprintf(file, "No;Nama Lengkap;Alamat;Kota;Tempat Lahir;Tanggal Lahir;Umur (th);No BPJS;ID Pasien\n");
+
+    // Tulis setiap data pasien
+    for (int i = 0; i < count; i++) {
+        fprintf(file, "%d;%s;%s;%s;%s;%s;%d;%lld;%s\n",
+                dataPasien[i].No,
+                dataPasien[i].Nama_Lengkap,
+                dataPasien[i].Alamat,
+                dataPasien[i].Kota,
+                dataPasien[i].Tempat_Lahir,
+                dataPasien[i].Tanggal_Lahir,
+                dataPasien[i].Umur,
+                dataPasien[i].No_BPJS,
+                dataPasien[i].ID_Pasien);
+    }
+
+    fclose(file);
+}
+
+// Fungsi untuk menulis kembali riwayat medis pasien ke file CSV
+void tulisRiwayatMedisPasien(const char* filename, Riwayat_Medis_Pasien* riwayatMedisPasien, int count) {
+    FILE* file = fopen(filename, "w");
+    if (!file) {
+        printf("Error opening file %s\n", filename);
+        return;
+    }
+
+    // Tulis header
+    fprintf(file, "No;Tanggal;ID Pasien;Diagnosis;Tindakan;Kontrol;Biaya (Rp)\n");
+
+    // Tulis setiap data pasien
+    for (int i = 0; i < count; i++) {
+        fprintf(file, "%d;%s;%s;%s;%s;%s;%.2lf\n",
+                riwayatMedisPasien[i].No,
+                riwayatMedisPasien[i].Tanggal,
+                riwayatMedisPasien[i].ID_Pasien,
+                riwayatMedisPasien[i].Diagnosis,
+                riwayatMedisPasien[i].Tindakan,
+                riwayatMedisPasien[i].Kontrol,
+                riwayatMedisPasien[i].Biaya);
+    }
+
+    fclose(file);
+}

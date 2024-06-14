@@ -1,4 +1,4 @@
-﻿No;Nama Lengkap;Alamat;Kota;Tempat Lahir;Tanggal Lahir;Umur (th);No BPJS;ID Pasien
+No;Nama Lengkap;Alamat;Kota;Tempat Lahir;Tanggal Lahir;Umur (th);No BPJS;ID Pasien
 1;Aris Suwito;Jl. Satu No.14;Kota Bandung;Kab. Mojokerto;1 Januari 1980;44;1234567890;KX 1230123
 2;Wawan Gunawan;Jl Dua No.3;Kab. Bandung;Kota Cirebon;14 Desember 1979;44;1234567891;KX 1230124
 3;Nyoman Sukiadi;Jl Lima No.13;Kab. Bogor;Kab. Probolinggo;2 Maret 1975;49;1234567892;KX 1230125
@@ -48,4 +48,3 @@
 47;Gede Semara Jaya;Jl Depalan No.19;Kota Depok;Kota Bogor;24 Agustus 1980;43;1234567936;KX 1230169
 48;Ketut Budiarta;Jl Satu No.6;Kab. Pangandaran;Kab. Jepara;17 Desember 1980;43;1234567937;KX 1230170
 49;I Gede Widana;Jl Enam No.14;Kab. Purwakarta;Kab. Bondowoso;27 Oktober 1983;40;1234567938;KX 1230171
-50;Ketut Widarma;Jl Empat No.6;Kab. Cirebon;Kab. Tuban;7 Juni 1982;41;1234567939;KX 1230172

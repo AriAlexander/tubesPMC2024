@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" modified="2024-06-14T04:12:06.930Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="Omk4YCPNLsobBpmiFrGg" version="24.5.2" type="onedrive">
+  <diagram name="Halaman-1" id="5di482721qhFinisEXYT">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-1" value="pengguna" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cnKbYbz0fDfaolMwI33Q-2" target="cnKbYbz0fDfaolMwI33Q-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="302" y="60" />
+              <mxPoint x="412" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-2" value="fungsi utama" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="234" y="70" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="cnKbYbz0fDfaolMwI33Q-1" target="cnKbYbz0fDfaolMwI33Q-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="60" />
+              <mxPoint x="247" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-5" value="- data pasien;&lt;div&gt;- jumlah pasien&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cnKbYbz0fDfaolMwI33Q-6" target="cnKbYbz0fDfaolMwI33Q-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="468" y="60" />
+              <mxPoint x="572" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-6" value="iterasi array" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="400" y="70" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cnKbYbz0fDfaolMwI33Q-9" target="cnKbYbz0fDfaolMwI33Q-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="628" y="60" />
+              <mxPoint x="732" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-9" value="pencarian elemen yang ingin dihapus" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="560" y="70" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cnKbYbz0fDfaolMwI33Q-12" target="cnKbYbz0fDfaolMwI33Q-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-12" value="iterasi array" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="720" y="70" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-15" value="- data pasien&lt;div&gt;- jumlah pasien&lt;/div&gt;&lt;div&gt;- nomor pasien yang ingin dihapus&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="10" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-16" value="- data pasien&lt;div&gt;- jumlah pasien&lt;/div&gt;&lt;div&gt;- nomor pasien yang ingin dihapus&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="10" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-17" value="- data pasien&lt;div&gt;- jumlah pasien&lt;/div&gt;&lt;div&gt;- nomor pasien yang ingin dihapus&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="10" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cnKbYbz0fDfaolMwI33Q-18" target="cnKbYbz0fDfaolMwI33Q-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-18" value="penggeseran elemen ke kiri" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="720" y="240" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-20" value="- data pasien&lt;div&gt;- jumlah pasien&lt;/div&gt;&lt;div&gt;- nomor pasien yang ingin dihapus&lt;/div&gt;" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="180" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cnKbYbz0fDfaolMwI33Q-21" target="cnKbYbz0fDfaolMwI33Q-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-21" value="pengurangan jumlah pasien" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="560" y="240" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-23" value="jumlah pasien" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cnKbYbz0fDfaolMwI33Q-25" value="data pasien berhasil dihapus/data pasien tidak ditemukan" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="250" width="440" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
