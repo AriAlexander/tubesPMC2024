@@ -116,7 +116,7 @@ int main() {
                 laporanKeuangan(riwayatMedisPasien, sizeRiwayatMedis);
                 break;
             case 13:
-                analisisPasienPenyakit();
+                analisisPasienPenyakit(riwayatMedisPasien, sizeRiwayatMedis);
                 break;
             case 14:
                 informasiKontrolPasien();
@@ -649,7 +649,119 @@ void laporanKeuangan(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMe
     // Bersihkan memori
     free(pendapatan);
 }
-void analisisPasienPenyakit() {}
+
+void analisisPasienPenyakit(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMedis) {
+    // Struktur untuk analisa jenis penyakit per bulan dan per tahun
+    typedef struct {
+        int tahun;
+        char** jenispenyakit;
+        int** banyakpenyakitbulanan;
+        int penyakitCount;
+    } analisapenyakit;
+
+    analisapenyakit* datapenyakit = NULL;
+    int jumlahTahun = 0;
+
+    for (int i = 0; i < sizeRiwayatMedis; i++) {
+        char* token = strtok(riwayatMedisPasien[i].Tanggal, " ");
+        int hari = atoi(token);
+        token = strtok(NULL, " ");
+        char* namaBulan = token;
+        token = strtok(NULL, " ");
+        int tahun = atoi(token);
+        token = "";
+
+        int bulan = 0;
+        if (strcmp(namaBulan, "Januari") == 0) bulan = 0;
+        else if (strcmp(namaBulan, "Februari") == 0) bulan = 1;
+        else if (strcmp(namaBulan, "Maret") == 0) bulan = 2;
+        else if (strcmp(namaBulan, "April") == 0) bulan = 3;
+        else if (strcmp(namaBulan, "Mei") == 0) bulan = 4;
+        else if (strcmp(namaBulan, "Juni") == 0) bulan = 5;
+        else if (strcmp(namaBulan, "Juli") == 0) bulan = 6;
+        else if (strcmp(namaBulan, "Agustus") == 0) bulan = 7;
+        else if (strcmp(namaBulan, "September") == 0) bulan = 8;
+        else if (strcmp(namaBulan, "Oktober") == 0) bulan = 9;
+        else if (strcmp(namaBulan, "November") == 0) bulan = 10;
+        else if (strcmp(namaBulan, "Desember") == 0) bulan = 11;
+
+        // Cari apakah tahun sudah ada dalam array
+        int tahunDitemukan = -1;
+        for (int j = 0; j < jumlahTahun; j++) {
+            if (datapenyakit[j].tahun == tahun) {
+                tahunDitemukan = j;
+                break;
+            }
+        }
+
+        // Jika tahun belum ada, tambahkan tahun baru ke array
+        if (tahunDitemukan == -1) {
+            jumlahTahun++;
+            datapenyakit = (analisapenyakit*)realloc(datapenyakit, jumlahTahun * sizeof(analisapenyakit));
+            datapenyakit[jumlahTahun - 1].tahun = tahun;
+            datapenyakit[jumlahTahun - 1].jenispenyakit = NULL;
+            datapenyakit[jumlahTahun - 1].banyakpenyakitbulanan = NULL;
+            datapenyakit[jumlahTahun - 1].penyakitCount = 0;
+            tahunDitemukan = jumlahTahun - 1;
+        }
+
+        // Cari apakah jenis penyakit sudah ada dalam array
+        int penyakitIndex = -1;
+        for (int j = 0; j < datapenyakit[tahunDitemukan].penyakitCount; j++) {
+            if (strcmp(datapenyakit[tahunDitemukan].jenispenyakit[j], riwayatMedisPasien[i].Diagnosis) == 0) {
+                penyakitIndex = j;
+                break;
+            }
+        }
+
+        // Jika jenis penyakit belum ada, tambahkan tahun baru ke array
+        if (penyakitIndex == -1) {
+            datapenyakit[tahunDitemukan].penyakitCount++;
+            int newCount = datapenyakit[tahunDitemukan].penyakitCount;
+
+            datapenyakit[tahunDitemukan].jenispenyakit = (char**)realloc(datapenyakit[tahunDitemukan].jenispenyakit, newCount * sizeof(char*));
+            datapenyakit[tahunDitemukan].jenispenyakit[newCount - 1] = strdup(riwayatMedisPasien[i].Diagnosis);
+
+            datapenyakit[tahunDitemukan].banyakpenyakitbulanan = (int**)realloc(datapenyakit[tahunDitemukan].banyakpenyakitbulanan, newCount * sizeof(int*));
+            datapenyakit[tahunDitemukan].banyakpenyakitbulanan[newCount - 1] = (int*)calloc(12, sizeof(int));
+
+            penyakitIndex = newCount - 1;
+        }
+
+        datapenyakit[tahunDitemukan].banyakpenyakitbulanan[penyakitIndex][bulan]++;
+    }
+
+    // Hitung dan tampilkan setiap jenis penyakit per bulan dan per tahun
+    char* spasi; int total;
+    for (int i = 0; i < jumlahTahun; i++) {
+        printf("Tahun: %d           Bulan: 1  2  3  4  5  6  7  8  9  10  11  12  total\n", datapenyakit[i].tahun);
+        for (int j = 0; j < datapenyakit[i].penyakitCount; j++) {
+            printf("  Penyakit: %s\n", datapenyakit[i].jenispenyakit[j]);
+            printf("    Banyak penyakit bulanan: ");
+            total = 0;
+            for (int k = 0; k < 12; k++) {
+                if (k>=9) {spasi=" ";} else spasi="";
+                total += datapenyakit[i].banyakpenyakitbulanan[j][k];
+                printf("%s%d  ", spasi, datapenyakit[i].banyakpenyakitbulanan[j][k]);
+            }
+            spasi="";
+            printf("%s%3d  ", spasi, total);
+            printf("\n");
+        }
+        printf("\n");
+    }
+
+    // Bersihkan memori
+    for (int i = 0; i < jumlahTahun; i++) {
+        for (int j = 0; j < datapenyakit[i].penyakitCount; j++) {
+            free(datapenyakit[i].jenispenyakit[j]);
+            free(datapenyakit[i].banyakpenyakitbulanan[j]);
+        }
+        free(datapenyakit[i].jenispenyakit);
+        free(datapenyakit[i].banyakpenyakitbulanan);
+    }
+    free(datapenyakit);
+}
 void informasiKontrolPasien() {}
 
 // Fungsi untuk menulis kembali data pasien ke file CSV
