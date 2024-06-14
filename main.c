@@ -50,7 +50,7 @@ void addData(Data_Pasien* data, int* count);
 void modifyData(Data_Pasien* data, int count);
 void saveData(char* filename, Data_Pasien* data, int count);
 void hapusDataPasien(Data_Pasien* dataPasien, int* count);
-void cariDataPasien(Data_Pasien* dataPasien, int count);
+void cariDataPasien(Data_Pasien* dataPasien, int* count);
 void tambahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int* count);
 void ubahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int count);
 void hapusRiwayatMedis();
@@ -98,7 +98,7 @@ int main() {
                 hapusDataPasien(dataPasien, &sizeDataPasien);
                 break;
             case 7:
-                cariDataPasien(dataPasien, sizeDataPasien);
+                cariDataPasien(dataPasien, &sizeDataPasien);
                 break;
             case 8:
                 tambahRiwayatMedis(riwayatMedisPasien, &sizeRiwayatMedis);
@@ -127,7 +127,6 @@ int main() {
                 free(dataPasien);
                 free(riwayatMedisPasien);
                 printf("Terima kasih telah menggunakan aplikasi ini.\n");
-                free(dataPasien);
                 exit(0);
             default:
                 printf("Pilihan tidak valid. Silakan coba lagi.\n");
@@ -449,6 +448,7 @@ void hapusDataPasien(Data_Pasien* dataPasien, int* count) {
             // Shift elements to the left
             for (int j = i; j < *count - 1; j++) {
                 dataPasien[j] = dataPasien[j + 1];
+                dataPasien[j].No -= 1;
             }
             (*count)--;
             printf("Data pasien nomor %d dengan nama %s telah dihapus.", no_pasien, nama_pasien);
@@ -458,16 +458,16 @@ void hapusDataPasien(Data_Pasien* dataPasien, int* count) {
     printf("Data pasien tidak ditemukan\n");
 }
 
-void cariDataPasien(Data_Pasien* dataPasien, int count) {
+void cariDataPasien(Data_Pasien* dataPasien, int* count) {
     char nama_pasien[50];
     printf("Masukkan nama pasien yang ingin dicari! ");
-    clearInputBuffer();  // Membersihkan buffer input
     fgets(nama_pasien, sizeof(nama_pasien), stdin);
 
     nama_pasien[strcspn(nama_pasien, "\n")] = '\0'; // remove newline character
+    clearInputBuffer();
 
     Data_Pasien* foundPasien = NULL;
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < *count; i++) {
         if (strcmp(dataPasien[i].Nama_Lengkap, nama_pasien) == 0) {
             foundPasien = &dataPasien[i];
             break;
