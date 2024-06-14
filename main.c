@@ -714,7 +714,7 @@ void analisisPasienPenyakit(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRi
             }
         }
 
-        // Jika jenis penyakit belum ada, tambahkan tahun baru ke array
+        // Jika jenis penyakit belum ada, tambahkan jenis penyakit baru ke array
         if (penyakitIndex == -1) {
             datapenyakit[tahunDitemukan].penyakitCount++;
             int newCount = datapenyakit[tahunDitemukan].penyakitCount;
@@ -762,6 +762,7 @@ void analisisPasienPenyakit(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRi
     }
     free(datapenyakit);
 }
+
 void informasiKontrolPasien() {}
 
 // Fungsi untuk menulis kembali data pasien ke file CSV
