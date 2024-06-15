@@ -6,6 +6,9 @@
 // Maksimal jumlah pasien yang bisa di-load
 #define MAX_PASIEN 100
 
+#define MAX_LINE_LENGTH 1024
+#define MAX_PATIENTS 100
+
 // Struktur untuk menyimpan data pasien
 typedef struct {
     int No;
@@ -29,6 +32,16 @@ typedef struct {
     char Kontrol[20];
     double Biaya;
 } Riwayat_Medis_Pasien;
+
+typedef struct {
+    int no;
+    char tanggal[20];
+    char id_pasien[20];
+    char diagnosis[50];
+    char tindakan[50];
+    char kontrol[20];
+    char biaya[20];
+} PatientRecord;
 
 // Struktur untuk menyimpan rincian biaya tindakan
 typedef struct {
@@ -791,6 +804,86 @@ void tulisDataPasien(const char* filename, Data_Pasien* dataPasien, int count) {
     }
 
     fclose(file);
+}
+
+// Fungsi untuk membaca data
+void loadData(const char *filename, PatientRecord records[], int *recordCount) {
+    FILE *file = fopen(filename, "r");
+    if (!file) {
+        perror("Failed to open file");
+        exit(1);
+    }
+
+    char line[MAX_LINE_LENGTH];
+    *recordCount = 0;
+
+    // Skip header line
+    fgets(line, sizeof(line), file);
+
+    while (fgets(line, sizeof(line), file)) {
+        PatientRecord record;
+        sscanf(line, "%d;%19[^;];%19[^;];%49[^;];%49[^;];%19[^;];%19[^\n]",
+               &record.no, record.tanggal, record.id_pasien, record.diagnosis,
+               record.tindakan, record.kontrol, record.biaya);
+        records[*recordCount] = record;
+        (*recordCount)++;
+    }
+
+    fclose(file);
+}
+
+// Fungsi untuk menyimpan data
+void saveData(const char *filename, PatientRecord records[], int recordCount) {
+    FILE *file = fopen(filename, "w");
+    if (!file) {
+        perror("Failed to open file");
+        exit(1);
+    }
+
+    fprintf(file, "No;Tanggal;ID Pasien;Diagnosis;Tindakan;Kontrol;Biaya (Rp)\n");
+    for (int i = 0; i < recordCount; i++) {
+        fprintf(file, "%d;%s;%s;%s;%s;%s;%s\n", records[i].no, records[i].tanggal,
+                records[i].id_pasien, records[i].diagnosis, records[i].tindakan,
+                records[i].kontrol, records[i].biaya);
+    }
+
+    fclose(file);
+}
+
+// Fungsi untuk mencari riwayat pasien berdasarkan ID
+void searchRecords(PatientRecord records[], int recordCount, const char *id_pasien) {
+    int found = 0;
+    for (int i = 0; i < recordCount; i++) {
+        if (strcmp(records[i].id_pasien, id_pasien) == 0) {
+            printf("%s;%s;%s;%s;%s;%s\n", records[i].tanggal, records[i].id_pasien,
+                   records[i].diagnosis, records[i].tindakan, records[i].kontrol,
+                   records[i].biaya);
+            found = 1;
+        }
+    }
+    if (!found) {
+        printf("Data dengan ID Pasien %s tidak ditemukan.\n", id_pasien);
+    }
+}
+
+// Fungsi untuk menghapus riwayat
+void deleteRecord(PatientRecord records[], int *recordCount, const char *tanggal, const char *id_pasien) {
+    int found = 0;
+    for (int i = 0; i < *recordCount; i++) {
+        if (strcmp(records[i].id_pasien, id_pasien) == 0 && strcmp(records[i].tanggal, tanggal) == 0) {
+            for (int j = i; j < *recordCount - 1; j++) {
+                records[j] = records[j + 1];
+            }
+            (*recordCount)--;
+            found = 1;
+            break;
+        }
+    }
+    if (found) {
+        printf("Data dengan tanggal %s dan ID Pasien %s berhasil dihapus.\n", tanggal, id_pasien);
+    } else {
+        printf("Data dengan tanggal %s dan ID Pasien %s tidak ditemukan.\n", tanggal, id_pasien);
+    }
 }
 
 // Fungsi untuk menulis kembali riwayat medis pasien ke file CSV
