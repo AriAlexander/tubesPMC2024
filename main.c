@@ -578,13 +578,15 @@ void laporanKeuangan(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMe
     int jumlahTahun = 0;
 
     for (int i = 0; i < sizeRiwayatMedis; i++) {
-        char* token = strtok(riwayatMedisPasien[i].Tanggal, " ");
+        char tanggal[20];
+        strcpy(tanggal, riwayatMedisPasien[i].Tanggal);
+
+        char* token = strtok(tanggal, " ");
         int hari = atoi(token);
         token = strtok(NULL, " ");
         char* namaBulan = token;
         token = strtok(NULL, " ");
         int tahun = atoi(token);
-        token="";
 
         int bulan = 0;
         if (strcmp(namaBulan, "Januari") == 0) bulan = 0;
@@ -646,10 +648,8 @@ void laporanKeuangan(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMe
         printf("  Total Pendapatan Tahunan: %.2f\n  Rata-rata Pendapatan Tahunan: %.2f\n\n", totalPendapatanTahunan, rataRataTahunan);
     }
 
-    // Bersihkan memori
     free(pendapatan);
 }
-
 void analisisPasienPenyakit(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMedis) {
     // Struktur untuk analisa jenis penyakit per bulan dan per tahun
     typedef struct {
@@ -663,13 +663,15 @@ void analisisPasienPenyakit(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRi
     int jumlahTahun = 0;
 
     for (int i = 0; i < sizeRiwayatMedis; i++) {
-        char* token = strtok(riwayatMedisPasien[i].Tanggal, " ");
+        char tanggal[20];
+        strcpy(tanggal, riwayatMedisPasien[i].Tanggal);
+
+        char* token = strtok(tanggal, " ");
         int hari = atoi(token);
         token = strtok(NULL, " ");
         char* namaBulan = token;
         token = strtok(NULL, " ");
         int tahun = atoi(token);
-        token = "";
 
         int bulan = 0;
         if (strcmp(namaBulan, "Januari") == 0) bulan = 0;
@@ -763,7 +765,57 @@ void analisisPasienPenyakit(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRi
     free(datapenyakit);
 }
 
-void informasiKontrolPasien() {}
+void informasiKontrolPasien(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMedis) {
+    char tanggalDicari[20];
+    int hari, bulan, tahun;
+
+    // Bersihkan buffer sebelum meminta input
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) { }
+
+    printf("Masukkan tanggal yang ingin dicari (dd mm yyyy): ");
+    fgets(tanggalDicari, sizeof(tanggalDicari), stdin);
+    tanggalDicari[strcspn(tanggalDicari, "\n")] = 0; // Menghapus newline jika ada
+
+    if (sscanf(tanggalDicari, "%d %d %d", &hari, &bulan, &tahun) != 3) {
+        printf("Format tanggal salah. Harap masukkan dengan format dd mm yyyy.\n");
+        return;
+    }
+
+    char bulanStr[12][10] = {
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    };
+
+    if (bulan < 1 || bulan > 12) {
+        printf("Bulan yang dimasukkan tidak valid.\n");
+        return;
+    }
+
+    char tanggalDicariFormatted[20];
+    sprintf(tanggalDicariFormatted, "%d %s %d", hari, bulanStr[bulan-1], tahun);
+
+    int ditemukan = 0;
+    for (int i = 0; i < sizeRiwayatMedis; i++) {
+        if (strcmp(riwayatMedisPasien[i].Tanggal, tanggalDicariFormatted) == 0) {
+            if (!ditemukan) {
+                printf("Kontrol pada tanggal %s:\n", tanggalDicariFormatted);
+            }
+            printf("No: %d\n", riwayatMedisPasien[i].No);
+            printf("ID Pasien: %s\n", riwayatMedisPasien[i].ID_Pasien);
+            printf("Diagnosis: %s\n", riwayatMedisPasien[i].Diagnosis);
+            printf("Tindakan: %s\n", riwayatMedisPasien[i].Tindakan);
+            printf("Kontrol: %s\n", riwayatMedisPasien[i].Kontrol);
+            printf("Biaya: %.2f\n", riwayatMedisPasien[i].Biaya);
+            printf("\n");
+            ditemukan = 1;
+        }
+    }
+
+    if (!ditemukan) {
+        printf("Tidak ada data kontrol pada tanggal %s\n", tanggalDicariFormatted);
+    }
+}
 
 // Fungsi untuk menulis kembali data pasien ke file CSV
 void tulisDataPasien(const char* filename, Data_Pasien* dataPasien, int count) {
