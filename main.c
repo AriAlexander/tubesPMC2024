@@ -650,6 +650,7 @@ void laporanKeuangan(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMe
 
     free(pendapatan);
 }
+
 void analisisPasienPenyakit(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMedis) {
     // Struktur untuk analisa jenis penyakit per bulan dan per tahun
     typedef struct {
