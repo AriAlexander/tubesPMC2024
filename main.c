@@ -119,7 +119,7 @@ int main() {
                 analisisPasienPenyakit(riwayatMedisPasien, sizeRiwayatMedis);
                 break;
             case 14:
-                informasiKontrolPasien();
+                informasiKontrolPasien(riwayatMedisPasien, sizeRiwayatMedis);
                 break;
             case 15:
                 tulisDataPasien("Data Pasien.csv", dataPasien, sizeDataPasien);
@@ -769,10 +769,6 @@ void analisisPasienPenyakit(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRi
 void informasiKontrolPasien(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMedis) {
     char tanggalDicari[20];
     int hari, bulan, tahun;
-
-    // Bersihkan buffer sebelum meminta input
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF) { }
 
     printf("Masukkan tanggal yang ingin dicari (dd mm yyyy): ");
     fgets(tanggalDicari, sizeof(tanggalDicari), stdin);
