@@ -86,6 +86,7 @@ int main() {
                 break;
             case 3:
                 tampilkanBiayaTindakan(biayaTindakan, sizeBiayaTindakan);
+                break;
             case 4:
                 addData(dataPasien, &sizeDataPasien);
                 saveData(filename, dataPasien, sizeDataPasien);
