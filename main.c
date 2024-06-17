@@ -56,7 +56,7 @@ void ubahRiwayatMedis(Riwayat_Medis_Pasien* riwayatMedis, int count);
 void hapusRiwayatMedis();
 void cariRiwayatMedis();
 void laporanKeuangan(Riwayat_Medis_Pasien *riwayatMedisPasien, int sizeRiwayatMedis);
-void analisisPasienPenyakit();
+void analisisPasienPenyakit(Riwayat_Medis_Pasien* riwayatMedisPasien, int sizeRiwayatMedis);
 void informasiKontrolPasien();
 void tulisDataPasien(const char* filename, Data_Pasien* dataPasien, int count);
 void tulisRiwayatMedisPasien(const char* fileName, Riwayat_Medis_Pasien* riwayatMedisPasien, int count);
